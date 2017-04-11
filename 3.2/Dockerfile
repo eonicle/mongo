@@ -71,7 +71,7 @@ RUN ln -s usr/local/bin/autodiscovery.sh /autodiscovery.sh
 
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
-ENTRYPOINT ["docker-entrypoint.sh", "autodiscovery.sh"]
+ENTRYPOINT ["docker-entrypoint.sh" ; "autodiscovery.sh"]
 
 EXPOSE 27017
 CMD ["mongod"]
