@@ -67,7 +67,7 @@ RUN mkdir -p /data/db /data/configdb \
 VOLUME /data/db /data/configdb
 
 COPY autodiscovery.sh /autodiscovery.sh
-RUN chmod +x /autodiscovery.sh
+RUN chmod +x ./autodiscovery.sh
 
 COPY docker-entrypoint.sh /usr/local/bin/
 RUN ln -s usr/local/bin/docker-entrypoint.sh /entrypoint.sh # backwards compat
