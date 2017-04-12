@@ -1,6 +1,6 @@
 #!/bin/bash
 
-MYIP=$(ip addr show eth0 | grep "inet\b" | awk '{print $2}' | cut -d/ -f1)
+MYIP=$(cat /etc/hosts | grep `echo $(hostname)` | awk '{print $1}')
 IPS=$(arp-scan --interface=eth0 --localnet --numeric --quiet --ignoredups | grep -E '([a-f0-9]{2}:){5}[a-f0-9]{2}' | awk '{print $1}')
 for IP in $IPS
 do
